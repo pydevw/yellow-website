@@ -1,0 +1,29 @@
+{% extends "shop/generic_base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <div class="container ">
+    <div class="row justify-content-center p-5">
+      <form class="p-5 border " method="post">
+        <div class=" text-left">
+          <h2 class="pb-4">Sign up</h2>
+          {% csrf_token %}
+          {% for field in form %}
+            <p>
+              {{ field.label_tag }}<br>
+              {{ field|add_class:"form-control" }}
+              {% if field.help_text %}
+                <small style="display: none;">{{ field.help_text }}</small>
+              {% endif %}
+              {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+              {% endfor %}
+            </p>
+          {% endfor %}
+        </div>
+        <button class="btn btn-info text-center" type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

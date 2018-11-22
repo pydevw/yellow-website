@@ -1,0 +1,50 @@
+{% load static %}
+<div class="row font-weight-normal"
+     style="font-family: Cardo; background-color: #00d5d5; margin: .1rem; border-radius: .3rem; color: white; opacity: .8;%">
+    <!--Panel-->
+    <div class="col-sm-4">
+        <div class="card-body">
+            <div class="card-image mt-4">
+                <img src="{% static "images/how-to-step1@2x.png" %}" width="100">
+            </div>
+
+            <p class="card-text howToText mt-2">Book tickets for museums, attractions and entertainment</p>
+        </div>
+    </div>
+    <!--/.Panel-->
+
+    <!--Panel-->
+    <div class="col-sm-4">
+
+        <div class="card-body">
+            <div class="card-image">
+                <img src="{% static "images/how-to-step2@2x.png" %}" width="100">
+            </div>
+            <p class="card-text howToText">Receive your tickets via email, SMS and our app</p>
+        </div>
+
+    </div>
+    <!--/.Panel-->
+
+    <!--Panel-->
+    <div class="col-sm-4">
+        <div class="card-body">
+            <div class="card-image mt-4">
+                <img src="{% static "images/how-to-step3@2x.png" %}" width="100">
+            </div>
+            <p class=" howToText">Show tickets on your smartphone at the venue and you're in!</p>
+        </div>
+    </div>
+    <!--/.Panel-->
+</div>
+
+
+<style>
+    p {
+        max-width: 1rem !important;
+        justify-items: center;
+    }
+    img {
+        justify-items: center;
+    }
+</style>

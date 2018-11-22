@@ -1,0 +1,156 @@
+{% extends "cart/base.html" %}
+{% block content %}
+
+
+  <!-- sticky-top -->
+  <div style="background-color: #ffc300;" class="navbar">
+    <ul class="container nav">
+      <li class="nav-item">
+        <a class="nav-link active" style="color: white; font-weight: 500; font-size: 14px; font-family: Helvetica
+                 Neue, Helvetica, Arial, sans-serif" href="#">BACK</a>
+      </li>
+      <li class="nav-item">
+        <a id="baseName" style="color: #ffffff; font-weight: 700; font-size: 1.1rem !important;"
+           class="nav-link"
+           href="{% url 'home' %}">Begin Order</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link " style="color: white; font-weight: 500; font-size: 14px; font-family: Helvetica
+                 Neue, Helvetica, Arial, sans-serif" href="#">INFO</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="container">
+    <!-- Select Date Panel -->
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12 pt-4" style="margin-left: 55px;">
+        <h2 class="event-title" style="color: rgba(67,67,67,0.91); ; letter-spacing: .01em;  color:#263238; font-weight: 800; font-family: 'Cardo', serif;
+        !important; font-size: 1.8rem; ">Mission San Juan Capistrano</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- top title -->
+      <!-- left side image -->
+
+      <div class="imageEvent col-xs-12 mt-4 ml-5 pl-4">
+        <img class="img-fluid"
+             src="https://i.gse.io/gse_media/117/11/1514495260-seaquarium_tickets.jpg?h=191&p=1&q=70&w=340&c=1, https://i.gse.io/gse_media/117/11/1514495260-seaquarium_tickets.jpg?h=383&p=1&q=30&w=680&c=1 2x"
+             alt="">
+      </div>
+
+
+      <!-- right side event info , select date -->
+      <div class="rightSideEventInfo col-xs-12 col-sm-5 mt-3">
+
+
+        <div class="center justify-content-center mr-2">
+
+          <div class="event-details">
+            <p class="card-text" style="font-size: 0.9rem !important; font-family: 'Open Sans', sans-serif;
+                ">California's Great America (Santa Clara, CA)
+            </p>
+            <p class="card-text"
+               style="font-size: 14px; font-weight: 600; font-family: 'Open Sans', sans-serif;">
+              Any Mon-Fri Through November 18, 2018
+              (2:00pm-5:00pm)
+            </p>
+            <div class="col-xs">
+                    <span class="fill col-md-7" style="max-width: 432px; display: block; background: rgba(189,76,
+                    179,0.87);
+                    color:
+                    #ffffff !important;">
+                        <p style="font-size:14px; padding-top: 0.5rem; padding-right: 1rem; padding-bottom:
+                        .5rem; font-weight: 400">
+                        <strong>&nbsp;Voucher:</strong> Your eticket will be emailed to you.
+                        </p>
+                      </p>
+                    </span>
+            </div>
+
+            <div class="yourDate"></div>
+            <div class="checkAvailabilityDate">
+              <!--
+              <span class="loading"></span>
+              -->
+            </div>
+            <button style="background-color: #19c1dc; text-decoration: none; border: none;
+                        letter-spacing: .1rem; font-weight: bold; "
+                    id="date-picker-example" class="btn btn-group-sm btn-block datepicker">Select Visit Date
+            </button>
+            <small style="font-size: 10px; display: flex; align-items: flex-start; ">&nbsp;&nbsp;
+              &nbsp;&nbsp;Regular tickets require the date of the visit
+            </small>
+
+          </div>
+
+
+          <!-- Select Quantity Panel -->
+
+          <div class="quantity" style="display: none">
+            <div class="col-sm-12 mt-2 mt-4" style="">
+              <h2 style="color: rgba(67,67,67,0.91); ; letter-spacing: .01em;  font-weight: 600;
+        !important; font-size: 1.7rem; padding-top:10px;">Select Quantity</h2>
+            </div>
+
+            <div class="event-details col sm-form" style="min-width:340px;">
+              <blockquote class="blockquote">
+                <div class="mb-0"><span
+                        style="font-size: 15; font-weight: 500">Single Day Ticket</span><br><span
+                        class="price"
+                        style="font-size: 14px; font-weight: 500;">$31.00</span><br>
+                  <spam class="infoFee" style="font-size: 13px;">$4.00
+                    service fee
+                    . | 1 - 6
+                    tickets
+                    available
+                  </spam>
+                </div>
+              </blockquote>
+
+              <div class="checkAvailability" style="margin-right: 18px;">
+                <button style="background-color: #19c1dc; text-decoration: none; font-weight: bold"
+                        href="#" id="date-picker-example"
+                        class="justify-content-center  datepicker btn btn-group-sm">Select Tickets to
+                  Continue
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {% comment %}
+      <script>
+          /*
+            new Vue({
+                el: '.event-details',
+                data: {
+                    show: false,
+                },
+                methods: {
+                    greet: () => {
+                        alert("Heey!")
+                    }
+                },
+                mounted: () => {
+                    //alert("Hii")
+                }
+            })
+            */
+      </script>
+{% endcomment %}
+      <style>
+        .container {
+          width: 900px;
+          margin-left: 15px;
+          margin-right: 15px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      </style>
+
+{% endblock content %}

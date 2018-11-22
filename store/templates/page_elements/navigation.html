@@ -1,0 +1,227 @@
+{% include "page_elements/modals/helpModal.html" %}
+{% load static %}
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand  containerNav navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+  <div class="container">
+    <div style="display: flex;">
+      <a href="{% url 'home' %}" style="font-size: 1.6rem !important; font-weight: 700; letter-spacing: .4px;
+      padding-bottom: 8px;">
+        <svg width="150" height="37" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <path id="a" d="M0 35.87h149.904V0H0z"/>
+          </defs>
+          <g fill="none" fill-rule="evenodd">
+            <path d="M46.095 21.162v-.22c0-5.656 3.883-9.802 9.371-9.802 2.773 0 4.672.74 6.481 2.169l-2.014 2.526c-1.168-.988-2.452-1.73-4.525-1.73-3.329 0-5.81 2.828-5.81 6.81v.164c0 4.339 2.51 6.92 5.985 6.92 1.43 0 2.715-.412 3.62-1.016v-4.229h-4.292v-2.8h7.503v8.622a11.563 11.563 0 0 1-6.977 2.333c-5.547 0-9.342-3.844-9.342-9.747M75.67 23.468v-.165c0-2.718-1.606-4.75-3.854-4.75-2.306 0-3.796 2.005-3.796 4.723v.165c0 2.718 1.606 4.778 3.854 4.778 2.307 0 3.796-2.033 3.796-4.75m-10.948.054v-.247c0-4.284 3.036-7.468 7.152-7.468 4.087 0 7.095 3.13 7.095 7.44v.248c0 4.283-3.037 7.44-7.153 7.44-4.087 0-7.094-3.102-7.094-7.413"
+                  fill="#FFF"/>
+            <mask id="b" fill="#fff">
+              <use xlink:href="#a"/>
+            </mask>
+            <path fill="#FFF" mask="url(#b)"
+                  d="M81.337 30.635h3.3V10.81h-3.3zM97.603 23.496v-.275c0-2.856-1.693-4.668-3.679-4.668-2.014 0-3.59 1.758-3.59 4.696v.22c0 2.91 1.605 4.694 3.59 4.694 1.986 0 3.679-1.812 3.679-4.667m-10.598.055v-.357c0-4.915 2.89-7.386 6.015-7.386 2.247 0 3.59 1.208 4.524 2.47V10.81h3.3v19.825h-3.3V28.3c-.963 1.4-2.306 2.608-4.524 2.608-3.095 0-6.015-2.443-6.015-7.358M102.553 28.877l1.547-2.223c1.401 1.07 2.89 1.702 4.263 1.702 1.372 0 2.16-.687 2.16-1.593v-.027c0-1.044-1.197-1.51-3.036-2.252-2.307-.933-4.233-1.922-4.233-4.31v-.056c0-2.608 2.219-4.256 5.109-4.256 1.722 0 3.561.577 5.021 1.565l-1.402 2.28c-1.167-.742-2.452-1.291-3.678-1.291s-1.955.631-1.955 1.428v.055c0 .96 1.225 1.455 3.036 2.224 2.394 1.016 4.203 2.059 4.203 4.338v.028c0 2.855-2.306 4.42-5.284 4.42-1.84 0-3.97-.631-5.751-2.032M141.963 16.082h3.299v2.855c.817-1.894 2.306-3.184 4.642-3.074v3.377h-.146c-2.686 0-4.496 1.647-4.496 4.97v6.425h-3.3V16.082zM135.602 23.496v-.275c0-2.856-1.693-4.668-3.678-4.668-2.014 0-3.59 1.758-3.59 4.696v.22c0 2.91 1.605 4.694 3.59 4.694 1.985 0 3.678-1.812 3.678-4.667m-10.598.055v-.357c0-4.915 2.891-7.386 6.015-7.386 2.248 0 3.59 1.208 4.525 2.47v-2.196h3.3v14.553h-3.3V28.3c-.964 1.4-2.306 2.608-4.525 2.608-3.095 0-6.015-2.443-6.015-7.358M123.423 27.823a2.982 2.982 0 0 1-1.222.259c-1.05 0-1.664-.468-1.664-1.593v-7.744h3.474v-2.663h-3.474v-3.927h-3.3v3.927h-2.335v2.663h2.336v8.375c0 2.828 1.722 3.735 4 3.735 1.018 0 2.09-.275 2.963-.79l-.778-2.242zM20.377 4.072c1.296 2.37 1.69 8.018 1.35 12.098l2.695.16c.522-6.448-.553-11.484-1.668-13.525-1.209-2.212-2.723-2.743-3.78-2.8-1.513-.083-3.068.79-4.146 2.344-1.168 1.684-2.183 4.46-2.183 4.46l2.722.468s.787-2.123 1.686-3.416c.523-.753 1.217-1.224 1.774-1.193.668.036 1.211.783 1.55 1.404M4.6 13.237c2.683-.484 8.244.89 12.067 2.471l.988-2.482c-6.049-2.483-11.23-3.03-13.54-2.613-2.504.452-3.484 1.71-3.864 2.686-.548 1.395-.188 3.125.975 4.617 1.26 1.618 3.622 3.43 3.622 3.43l1.29-2.412s-1.8-1.395-2.768-2.64c-.563-.724-.802-1.52-.6-2.035.24-.615 1.128-.895 1.83-1.022M8.551 30.888c.363-2.67 3.405-7.468 6.109-10.57l-2.086-1.695c-4.26 4.914-6.387 9.612-6.7 11.91-.338 2.492.57 3.8 1.393 4.46 1.174.945 2.95 1.142 4.748.51 1.946-.684 4.42-2.341 4.42-2.341l-1.923-1.959s-1.9 1.261-3.397 1.786c-.871.305-1.713.283-2.145-.066-.519-.416-.514-1.336-.419-2.035M26.77 32.632c-2.459-1.166-6.14-5.506-8.292-9.004l-2.276 1.435c3.415 5.52 7.282 8.97 9.398 9.973 2.295 1.088 3.837.639 4.725.07 1.273-.81 2.012-2.418 1.96-4.301-.058-2.04-.89-4.876-.89-4.876l-2.48 1.2s.627 2.176.67 3.744c.025.912-.257 1.696-.726 1.994-.561.359-1.446.07-2.09-.235M34.078 16.059c-1.881 1.949-7.198 4.065-11.232 5.005l.678 2.582c6.371-1.503 10.888-4.07 12.509-5.746 1.756-1.82 1.8-3.406 1.527-4.416-.386-1.447-1.707-2.638-3.537-3.17-1.982-.577-4.97-.672-4.97-.672l.39 2.7s2.288.084 3.812.529c.886.259 1.554.765 1.696 1.298.172.638-.38 1.38-.873 1.89"/>
+          </g>
+        </svg>
+      </a>
+
+      <ul class="navbar-nav ml-4 hiddenLinks" style="margin-top: 17px;">
+        <li class="nav-item active">
+          <a class="nav-link py-0" style="font-weight: 600; font-size: 14px; letter-spacing: 1.4px; color:
+                       white;" href="#">NEW FOR YOU</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link py-0" style="font-weight: 600; font-size: 14px; letter-spacing: 1.4px; color:
+                       white;" href="#">FIND
+            EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link py-0" style="font-weight: 600; font-size: 14px; letter-spacing: 1.4px; color:
+                       white;" href="#">WINTER
+            FEST</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+      <div class="d-none d-sm-block has-search">
+        <form method="post" style="display: flex;">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" id="searchbar" class="light form-control" style="min-width: 40px;
+                        max-width: 240px; width: 240px; text-indent: 20px;"
+                 placeholder="Search event or places">
+
+          <button class="btn-outline-white btn-default" style="width:100px; border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px; font-weight: 500; -color: white; ">
+            <span style="color: #19c1dc;">
+              SEARCH
+            </span>
+          </button>
+        </form>
+      </div>
+
+      <li class="nav-item" data-target="#fullHeightModalRight">
+        <a class="nav-link" data-toggle="modal" data-target="#fullHeightModalRight">
+          <i data-toggle="modal" class="fa-lg fa fa-question-circle-o"></i>
+        </a>
+      </li>
+
+
+      {% if user.is_authenticated %}
+        <li class="nav-item" id="navbarDropdownMenuLink">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            <svg width="20" height="21" viewBox="0 0 20 21" xmlns="http://www.w3.org/2000/svg"><title>
+              0A110D0E-D8E6-4EDD-852B-3D22442123A3-557-000049416862F702</title>
+              <g stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M14.15 5.594c0 2.525-2.037 4.57-4.548 4.57-2.51 0-4.547-2.045-4.547-4.57 0-2.525 2.036-4.57 4.547-4.57 2.511 0 4.548 2.045 4.548 4.57zM16.298 19.087h1.803v-2.644s-.45-.435-1.252-.996a14.941 14.941 0 0 0-1.302-.818 14.182 14.182 0 0 0-2.18-.99c-3.185-1.128-7.634-1.331-12.263 2.804v2.644h11.932"/>
+              </g>
+            </svg>
+            <span style="font-size: 13px; font-weight: 600;">
+                        ACCOUNT </span>
+          </a>
+
+          <div style="width: 14rem; margin-right: 1rem; border-radius: 10px;"
+               class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <ul style="margin: 3px; color: black; font-size: 40px; font-weight: 600">
+              <li>
+                <a href="#" class="dropdown-item">Hi, {{ user.email }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url "orders_history" %}">Orders History</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url "user_profile" %}">Profile</a>
+              </li>
+              <li>
+                <a href="{% url 'logout' %}?next=/" class="dropdown-item">Log out</a>
+              </li>
+            </ul>
+          </div>
+
+        </li>
+      {% else %}
+        <a href="{% url 'login' %}" class="nav-link">
+          <li class="nav-item">
+            <span style="font-size: 14px; font-weight: 600;"> SIGN UP </span>
+
+          </li>
+        </a>
+      {% endif %}
+      {% comment %}
+        <li class="nav-item">
+            <a class="nav-link"><i class="fa fa-cart-plus fa-1x"></i> <span
+                    class="clearfix d-none d-sm-inline-block">1 item in cart →</span></a>
+        </li>
+      {% endcomment %}
+    </ul>
+  </div>
+</nav>
+
+<style type="text/css" itemscope>
+
+  .containerNav {
+    align-items: baseline;
+  }
+
+  @media (max-width: 870px) {
+    .hiddenLinks {
+      display: none;
+    }
+  }
+
+  @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 767px)
+  and (orientation: portrait) {
+    #searchbar {
+      width: 1200%;
+    }
+  }
+
+  .order-1 {
+    order: 1;
+    align-items: start;
+  }
+
+  .order-2 {
+    order: 2;
+    justify-content: flex-end;
+  }
+
+  nav {
+    height: 60px !important;
+    background-color: #fec200;
+    color: #fff;
+    align-items: center !important;
+  }
+
+  li, ul {
+    list-style: none;
+
+  }
+
+  li a {
+    font-size: 13px !important;
+    padding: 10px;
+    letter-spacing: .1em;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    display: block;
+    font-weight: 500;
+
+  }
+
+  .container > li {
+    flex: 1;
+  }
+
+  /* ITEMS on NAVIGATION, SEARCHBAR, ICONS */
+  #searchbar {
+    height: 40px;
+    border-radius: .4rem;
+    border: none !important;
+    color: #ffc300;
+    cursor: pointer;
+    text-indent: 0;
+    z-index: 3;
+
+
+
+  }
+
+  #searchbar::placeholder {
+    padding-left: 2px;
+    font-size: .9em;
+    border: none;
+    justify-content: center;
+    color: #bcc0ba;
+    font-family: Cardo;
+  }
+
+  #searchbar:focus {
+    outline: 0;
+    border: none;
+    font-size: .9rem;
+    background-color: #fafff8;
+    color: #595959;
+    width: 240px;
+    font-family: "Freight Sans";
+    line-height: 12px;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #ababab;
+  }
+
+</style>

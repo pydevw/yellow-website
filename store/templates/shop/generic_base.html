@@ -1,0 +1,86 @@
+{% load sass_tags %}
+{% load compile_static %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon"
+        href="data:image/png;base64,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"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- VueJS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+  <script src="{% sass_src "scss/style.scss" %}"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+  <link rel="stylesheet" href="{% static "css/mdb.css" %}">
+  {% comment %}
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="{% sass_src 'scss/style.scss'|compile %}">
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="{% sass_src "scss/bootstrap-4.0.0/scss/bootstrap.scss"|compile %}">
+    <!-- MDB SCSS/CSS -->
+    <link rel="stylesheet" href="{% sass_src "scss/mdb.scss"|compile %}">
+  {% endcomment %}
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Roboto|Roboto+Slab|Source+Sans+Pro"
+        rel="stylesheet">
+
+
+  <title> {% block title %} My amazing site {% endblock %}</title>
+</head>
+<body>
+{% comment %} FIRST NAV
+{% include "page_elements/firstNav.html" %}
+{% endcomment %}
+
+{% comment %} SECOND & Primary NAV {% endcomment %}
+{% include "page_elements/navigation.html" %}
+
+<div class="">
+  {% block safe %}
+  {% endblock %}
+
+  <!-- home container -->
+  {% block content %}
+  {% endblock %}
+</div>
+
+{% comment %} FOOTER {% endcomment %}
+{% include 'page_elements/_footer.html' %}
+
+<button type="button" hidden class="btn btn-primary" data-toggle="modal" data-target="#modalCookie">button</button>
+
+
+{% include "page_elements/modals/cookiesModal.html" %}
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static "js/popper.min.js" %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static "js/mdb.min.js" %}"></script>
+<script src="{% static "js/customJS.js" %}"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+<!-- You can alternatively load the minified version -->
+<script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
+<script src="{% static 'vue-scripts/main.js' %}"></script>
+
+<style>
+  .container {
+    max-width: 1270px;
+  }
+</style>
+
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+@media (max-width: 767px) {
+  /* Target devices narrower than 768px. */
+  .container {
+    width: 30rem !important;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.ourPrice {
+  color: #444;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  margin-right: 0.75em;
+  padding: 0 0 0.25em;
+  position: relative;
+  white-space: nowrap;
+}
+
+.card {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  justify-content: flex-end;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+.card__heading {
+  color: #444;
+  cursor: pointer;
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.375;
+  -webkit-transition: color 0.125s ease-in-out;
+  transition: color 0.125s ease-in-out;
+}
+
+.wrapper {
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: left;
+}
+
+.main {
+  text-align: left;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+// breakpoint mixin
+@mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
+  @if $mq2 == false {
+    @media ($maxmin: $mq01) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $mq01) and (max-width: $mq2) {
+      @content;
+    }
+  }
+}
+
+// breakpoint variables
+$lg: 1170px;
+$md: 1024px;
+$sm: 640px;
+$xs: 480px;
+
+// responsive font size mixin
+@mixin font-size-map($font-size-map) {
+  @each $breakpoint, $font-size in $font-size-map {
+    @if $breakpoint == null {
+      font-size: $font-size;
+    } @else {
+      @include breakpoint($breakpoint) {
+        font-size: $font-size;
+      }
+    }
+  }
+}
+
+// font sizes
+
+$html-font-size: (null: 16px, $md: 15px, $sm: 14px, $xs: 13px);
+
+$paragraph-font-size: (null: 18px, $lg: 17px, $md: 16px, $sm: 15px, $xs: 14px);
+
+// html
+
+html {
+  @include font-size-map($html-font-size);
+}
+
+p {
+  @include font-size-map($paragraph-font-size);
+}

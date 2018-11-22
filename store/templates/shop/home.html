@@ -1,0 +1,221 @@
+{% extends "shop/generic_base.html" %}
+{% load static %}
+{% block content %}
+  <div id="app">
+  <div class="container">
+    <div class="wrapper">
+      <!-- left side section -->
+      <div class="col-md-3 ">
+        <div style="display: flex; align-items: start; margin-bottom: 5px;">
+          <img class="mt-" width="75" height="75"
+               src="https://i.gse.io/frontend/territories/los-angeles-56ca9aa27a78eccafc31bcf75d7daa82.png?w=150&h=150"
+               class="global-header-icon">
+
+          <ul class="mt-2" style="display:block; align-items: flex-start; justify-content: flex-start;">
+            <li>
+              <h5 style="color: #656565; font-size: 1.4rem; font-weight: 800; line-height: 1;
+				              font-weight: 700; margin-left: -2rem !important;">Find
+                Events</h5>
+            </li>
+            <li style="font-size: 14px; font-weight: 400;  margin-left: -2rem !important;"><span
+                    style="color: #0098c5">Select State »</span>
+            </li>
+          </ul>
+
+          <div class="ml-auto" style="max-width: 100%; height: auto;">
+            <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+              <mask id="a" fill="#fff">
+                <path d="m0 .863h23.263v18.472h-23.263z" fill="#fff" fill-rule="evenodd"/>
+              </mask>
+              <g fill="#19c1dc" fill-rule="evenodd">
+                <path d="
+                m15.247 11.985c1.077 0 1.957.88 1.957 1.957 0 1.1-.88 1.98-1.957 1.98a1.966 1.966 0 0 1 -1.957-1.98c0-1.077.88-1.957 1.957-1.957m0-2.069a4.23 4.23 0 0 0 -4.224 4.224c0 1.632 2.832 8.957 4.224 8.957 1.276 0 4.224-7.2 4.224-8.957a4.224 4.224 0 0 0 -4.224-4.224"/>
+                <path d="
+                m1.09 4.532h-.001zm-.035 14.803c-.202 0-.402-.058-.577-.173a1.049 1.049 0 0 1 -.478-.884v-13.835c0-.449.283-.849.705-.997l5.213-1.84c.254-.09.529-.08.773.028l4.505 1.948 5.381-2.616c.213-.1.454-.13.683-.078l5.173 1.13c.49.106.83.53.83 1.03v13.917a1.053 1.053 0 0 1 -1.377 1.005l-1.444-.49a.575.575 0 1 1 .371-1.091l1.338.455-.04-13.718-5.098-1.114-5.399 2.611a1.06 1.06 0 0 1 -.877.016l-4.505-1.949-5.08 1.82v13.622l4.66-2.053c.272-.121.585-.12.858.003l3.934 1.768a.575.575 0 0 1 -.472 1.051l-3.933-1.768-4.717 2.113a1.06 1.06 0 0 1 -.427.09z"
+                      mask="url(#a)" transform="translate(0 -.903)"/>
+                <path d="
+                m6.288 13.443a.576.576 0 0 1 -.576-.576v-8.63a.576.576 0 1 1 1.152 0v8.63a.576.576 0 0 1 -.576.576m10.59-4.786a.576.576 0 0 1 -.576-.576v-4.916a.576.576 0 0 1 1.152 0v4.915a.576.576 0 0 1 -.576.576m-5.806 1.481a.576.576 0 0 1 -.576-.576v-3.809a.576.576 0 0 1 1.152 0v3.809a.576.576 0 0 1 -.576.576"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- search form left side -->
+        {% include 'page_elements/_sidebar.html' %}
+
+        <!-- events counter -->
+        <a href="#" class="left" style="display: flex; color: #7667da; font-size: 15px; justify-content:
+		        flex-start; font-family: 'Freight Sans'">64 events found</a>
+        <!-- end events counter -->
+
+        <!-- sort by categories and more - left side container -->
+        <div id="categories-container">
+          <p class="bold pt-4">Categories</p>
+          <style>
+            li label {
+              display: inline-block;
+            }
+          </style>
+          <div style="align-items: start; margin-left: -50px; margin-top: -10px;">
+            <ul>
+              <li v-for="item in items" :key="item.id" style="display: flex">
+                <input class="form-check-input" type="checkbox">
+                <label for="${ item.id }"><a
+                        href="{% url 'event' %}">${ item.title }</a></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end left side section -->
+
+
+      <!-- cards section -->
+      <div class="col-md-9 mt-2">
+        <!-- templates/home.html -->
+        <div class="row">
+          <div class="col-xs-2 col-sm-6 col-md-6 col-lg-4" v-for="item in items" :key="item.id">
+            <!-- card -->
+            <div class="card-deck example" style="padding: 9px;">
+              <a href="{% url 'event' %}">
+                <div class="card card-img-top"
+                     style=" max-height: 40rem !important; border-radius: 10px; position: relative;">
+                  <img class="img-fluid "
+                       style=" height: 155px; border-top-left-radius: 10px; border-top-right-radius: 10px;"
+                       v-bind:src="item.imageUrl"
+                       alt="Discounted parkname Park Admission ">
+
+                  <div class="card-body" style="height: 50px;">
+
+                    <span style="
+                          color:#263238; font-weight: 800; font-family: 'Cardo', serif;" class="card__heading">
+                      ${ item.title }
+                    </span>
+
+                    <br>
+
+                    <!-- card text -->
+                    <span class="card-text
+			                      light"
+                          style="font-size:14px; color:#37474F; font-family: 'Cardo', serif; margin-bottom: -10px;"
+                    >${ item.location }
+                    </span>
+                    <!-- end card text -->
+
+
+                    <!-- card footer -->
+                    <div class="ctn card-footer row" style="display: flex; position:absolute;bottom:0;
+                                                          margin-bottom: 7px;">
+                                                          
+                      <div class="item ourPrice ">
+                        <span class="priceBox ">
+                          ${ item.price }
+                        </span>
+                      </div>
+
+                      <span class="item" style="display: flex; flex:1;
+                        color: black; font-size: 15px;">
+                          <img src="{% static 'images/heart-open.svg' %}" alt="">&nbsp;
+                            <span class="like-count">
+                              1.7k
+                            </span>
+                      </span>
+
+                    </div>
+                    <!-- end card footer -->
+
+                  </div>
+                </div>
+              </a>
+              <!-- end div card -->
+            </div>
+          </div>
+        </div>
+        <!-- end cards section -->
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <style>
+
+    @media (max-width: 860px) {
+      #categories-container {
+        display: none;
+      }
+    }
+
+    .card-deck {
+      display: grid;
+      padding: 7px;
+    }
+
+    .card-our-price {
+      color: #444;
+      display: inline-block;
+      font-size: 1.25em;
+      font-weight: bold;
+      line-height: 1;
+      margin-right: 0.75em;
+      padding: 0 0 0.25em;
+      position: relative;
+      white-space: nowrap;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      height: 3em;
+      margin-top: 1em;
+    }
+
+    .card {
+      border-radius: 10px !important;
+    }
+
+    .img-fluid {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+
+    .card__heading {
+      color: #444;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      -webkit-transition: color 0.125s ease-in-out;
+      transition: color 0.125s ease-in-out;
+    }
+
+    .card-body {
+      border-radius: 0.5rem;
+      background-color: #fff;
+      -webkit-box-shadow: 0 0.125em 0.5em rgba(68, 68, 68, 0.15);
+      box-shadow: 0 0.125em 0.5em rgba(68, 68, 68, 0.15);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      position: relative;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 5px 8px;
+    }
+  </style>
+{% endblock %}
