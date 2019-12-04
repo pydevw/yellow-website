@@ -1,4 +1,4 @@
-Django==2.1.2
+Django==2.1.11
 ansicolors==1.1.8
 astroid==1.6.5
 backports.functools-lru-cache==1.5
