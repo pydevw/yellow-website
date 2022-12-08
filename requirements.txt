@@ -2,7 +2,7 @@ Django==2.1.2
 ansicolors==1.1.8
 astroid==1.6.5
 backports.functools-lru-cache==1.5
-certifi==2018.10.15
+certifi==2022.12.7
 configparser==3.5.0
 chardet==3.0.4
 compass==0.1.4
